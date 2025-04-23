@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: length-service
+spec:
+  selector:
+    app: length-service
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+    - name: metrics
+      port: 9464
+      targetPort: 9464
+  type: NodePort

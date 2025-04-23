@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: length-service-config
+  namespace: default
+data:
+  OTLP_HOST: jaeger-collector.default.svc.cluster.local
+  OTLP_PORT: "4317"
+  METRICS_PORT: "9464"

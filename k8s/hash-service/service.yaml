@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hash-service
+spec:
+  selector:
+    app: hash-service
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+    - name: metrics
+      port: 9464
+      targetPort: 9464
+  type: NodePort
