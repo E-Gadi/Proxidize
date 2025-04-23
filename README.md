@@ -16,8 +16,8 @@ This project contains two FastAPI-based Python microservices deployed to Kuberne
 ### 1. Clone the Repository
 
 ```bash
-git clone <repo-url>
-cd <repo-directory>
+git clone git@github.com:E-Gadi/Proxidize.git
+cd Proxidize 
 ```
 
 Make sure you are in the root of the cloned directory before proceeding.
@@ -132,7 +132,7 @@ These metrics are exposed by both microservices at:
 
 ## 🖼️ Screenshots
 
-You can find screenshots in the `./screenshots` directory.
+You can find supporting screenshots in the `./screenshots` directory.
 
 ---
 
@@ -144,3 +144,28 @@ Use the interactive script options to delete resources:
 - Length Service: `Option 8` in `_deploy.sh`
 - Jaeger: `./scripts/install_jaeger.sh` → `clean`
 - Prometheus: Manually delete or reset your Helm chart deployment if used
+
+
+---
+
+### 🧪 Example cURL Requests
+
+You can test the microservices manually with the following commands:
+
+#### Hash Service
+
+```bash
+curl -X POST http://localhost:8080/hash/ \
+  -H "Content-Type: application/json" \
+  -d '{"input_string": "Apple"}'
+```
+
+#### Length Service
+
+```bash
+curl -X POST http://localhost:8081/length/ \
+  -H "Content-Type: application/json" \
+  -d '{"input_string": "Apple"}'
+```
+
+---
