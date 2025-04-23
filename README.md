@@ -11,6 +11,16 @@ This project contains two FastAPI-based Python microservices deployed to Kuberne
 
 ---
 
+## ⚙️ Startup Order & Troubleshooting
+
+To ensure proper integration with Prometheus and Jaeger, follow this startup order:
+	1.	Start Prometheus and Jaeger first
+	2.	Deploy the Hash and Length services
+
+	Note: If the services do not appear in Jaeger or Prometheus after deployment, try redeploying them. This helps ensure that tracing and metrics endpoints are registered correctly.
+  
+---
+
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
@@ -82,7 +92,7 @@ If needed, select option `6) Port-forward & Test /health`.
 Choose:
 
 - `build` – to install and run Jaeger
-- `clean` – to remove the setup later
+- `clean` – to re-run
 
 #### Access Jaeger UI
 
